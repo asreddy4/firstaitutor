@@ -1,0 +1,14 @@
+version: 1
+
+database:
+  host: "localhost"
+  port: "5432"
+  username: "ZmFpdA=="
+  password: "RmFpdDIwMjQhIQ=="
+  name: "dGVzdDU="
+  # DATABASE_URL = "postgresql://fait:Fait2024!!@localhost:5432/test5"
+  #  postgresql://[username]:[password]@[host]:[port]/[database]
+
+
+
+
