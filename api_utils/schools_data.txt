@@ -1,5 +1,0 @@
-ID: 1, Name: king kiu8 ×, Country Code: GB, County State: GB-BRY, Identification Code: sch12399
-ID: 3, Name: tttt, Country Code: TJ, County State: TJ-DU, Identification Code: 131231
-ID: 4, Name: werwer, Country Code: TG, County State: TG-C, Identification Code: 23123123
-ID: 9, Name: qeqwe, Country Code: TW, County State: TW-CHA, Identification Code: a1231
-ID: 10, Name: asdasd, Country Code: TN, County State: TN-11, Identification Code: 23123

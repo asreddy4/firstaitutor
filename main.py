@@ -3,11 +3,14 @@ import logging
 import traceback
 import uvicorn
 import asyncpg
-from api_models import creator
-import api_utils.log as log
-import os
-import sys
 
+import utils.log as log
+# import os
+# import sys
+#
+# scriptDir = os.path.dirname(os.path.abspath(__file__))
+# sys.path.append(scriptDir)
+from models import creator
 
 async def main():
     try:
@@ -18,7 +21,8 @@ async def main():
             token="token",
             func="email_info",
         )
-        uvicorn.run('config:app', host='127.0.0.1', port=8000, reload=True) #http://127.0.0.1:8000
+        logging.shutdown()
+        uvicorn.run('config:app', host='127.0.0.1', port=8000, reload=True)
     except Exception:
         print(traceback.format_exc())
 
@@ -29,6 +33,7 @@ def run_server():
         asyncio.run(main())
     except KeyboardInterrupt:
         print('Bye')
+
 
 if __name__ == '__main__':
     run_server()
