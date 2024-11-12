@@ -20,9 +20,6 @@ import routers.qualifications
 import routers.learning_network
 import routers.question_type
 
-scriptDir = os.path.dirname(os.path.abspath(__file__))
-sys.path.append(scriptDir)
-
 app = FastAPI()
 
 app = FastAPI(docs_url="/")
@@ -88,8 +85,7 @@ password_request = "123456789"
 salt_country = "cny"
 country_pass = password_request + salt_country
 password = hashlib.md5(country_pass.encode()).hexdigest()
-# DATABASE_URL = "postgresql://fait:Fait2024!!@localhost:5432/test5"
-DATABASE_URL = "postgresql://postgres:@Suneel1*@localhost:5432/project"
+DATABASE_URL = "postgresql://fait:Fait2024!!@localhost:5432/test5"
 # "postgresql://firstaitutor:Fait2024!!@localhost:5432/postgres"
 BOOT_TIME = time.time()
 TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID = (
