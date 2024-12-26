@@ -20,6 +20,7 @@ from pydantic import BaseModel, ValidationError
 import pytz
 import yaml
 import base64
+from pymongo import MongoClient
 
 scriptDir = os.path.dirname(os.path.abspath(__file__))
 configfile = {}
@@ -127,7 +128,7 @@ async def get_subjects(token: str = Header(...)):
             detail=None
         )
 
-    subject_list = [{"id": str(subject['id']), "subject_id": str(subject['subject_id']), "name": subject['name'].capitalize()} for subject in
+    subject_list = [{"id": str(subject['id']), "subject_id": str(subject['subject_id']), "name": subject['name'].strip()} for subject in
                     subjects]
     return Response(
         status_code=status.HTTP_200_OK,
@@ -214,14 +215,14 @@ async def create_subject(subject: Subject, token: str = Header(...)):
         port=str(configfile["database"]["port"])
     )
 
-    name = subject.name.lower()
+    name = subject.name
     try:
         existing_id = await conn.fetchval(
             'SELECT name FROM subject WHERE name = $1', name.strip())
         if existing_id:
             return Response(
                 status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
-                message=f"This data has already been registered with subject name {name.strip()}",
+                message=f"This data has already been registered with subject name '{name.strip()}'",
                 data=None,
                 detail=None
             )
@@ -230,12 +231,16 @@ async def create_subject(subject: Subject, token: str = Header(...)):
         if existing_subject_id:
             return Response(
                 status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
-                message=f"This data has already been registered with subject id {subject.subject_id}",
+                message=f"This data has already been registered with subject id '{subject.subject_id}'",
                 data=None,
                 detail=None
             )
         new_id = await conn.fetchval(
             'INSERT INTO subject(name,subject_id) VALUES($1,$2) RETURNING id', name.strip(), subject.subject_id.strip())
+        # client = MongoClient("mongodb://localhost:27017/")
+        # db = client.mongodb
+        # collection = db.subjects
+        # collection.insert_one({"name": name.strip(), "subject_id": subject.subject_id.strip()})
         return Response(
             status_code=status.HTTP_200_OK,
             message="Your data has been correctly registered in the database",
@@ -326,7 +331,7 @@ async def delete_subject(subject_delete: DeleteSubject, token: str = Header(...)
         if deleted_subject_name:
             return Response(
                 status_code=status.HTTP_200_OK,
-                message=f"Subject with ID {subject_delete.subject_id} ({deleted_subject_name}) deleted successfully",
+                message=f"Subject with ID '{subject_delete.subject_id}' ('{deleted_subject_name}') deleted successfully",
                 data={"subject_id": subject_delete.subject_id, "subject_name": deleted_subject_name},
                 detail=None
             )
@@ -427,7 +432,7 @@ async def edit_subject(subject_update: UpdateSubject, token: str = Header(...)):
                 data=None,
                 detail=None
             )
-        name = subject_update.new_name.lower()
+        name = subject_update.new_name
         if name.strip() == existing_id["name"] and subject_update.subject_id == existing_id["subject_id"]:
             return Response(
                 status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
@@ -441,7 +446,7 @@ async def edit_subject(subject_update: UpdateSubject, token: str = Header(...)):
             if existing_name:
                 return Response(
                     status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
-                    message=f"This data has already been registered with ID {existing_name}",
+                    message=f"This data has already been registered with ID '{existing_name}'",
                     data=None,
                     detail=None
                 )
@@ -466,7 +471,7 @@ async def edit_subject(subject_update: UpdateSubject, token: str = Header(...)):
             if existing_subject_id:
                 return Response(
                     status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
-                    message=f"This data has already been registered with ID {existing_subject_id}",
+                    message=f"This data has already been registered with ID '{existing_subject_id}'",
                     data=None,
                     detail=None
                 )

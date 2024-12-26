@@ -17,7 +17,7 @@ async def create_table_learning_network(configfile):
             ln_id varchar(150),
             title varchar(150),
             subject_id varchar(150),
-            parent_nodes varchar(150),
+            parent_nodes JSONB,
             max_order int,
             back_learning_level int,
             is_subject_head_node BOOLEAN,

@@ -12,16 +12,16 @@ async def create_table_qualification(configfile):
     await conn.execute('''
         CREATE TABLE IF NOT EXISTS qualification(
             id serial PRIMARY KEY,
-            q_id varchar(150),
+            qual_id varchar(150),
             title varchar(150),
             country_code varchar(150),
             subject_id varchar(150),
             age int,
-            study_level varchar(150),
-            var varchar(150),
-            org varchar(150),
-            grade varchar(150),
-            modules varchar(150) default Null,
+            study_level JSONB default Null,
+            var JSONB default Null,
+            org JSONB default Null,
+            grade JSONB default Null,
+            modules JSONB default Null,
             time_created TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
             time_last_edited TIMESTAMP,
             last_created_user_id int

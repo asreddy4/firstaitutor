@@ -3,17 +3,26 @@ version: 1
 database:
   host: "localhost"
   port: "5432"
-  username: "ZmFpdA=="
-#  username: "fait"
+#  username: "ZmFpdA=="
+#  password: "RmFpdDIwMjQhIQ=="
+#  name: "dGVzdDU="
 
-  password: "RmFpdDIwMjQhIQ=="
-#  password: "Fait2024!!"
-
-  name: "dGVzdDU="
-#  name: "test5"
+  username: "cG9zdGdyZXM="
+#  username: "postgres"
+  password: "QFN1bmVlbDEq"
+#  password: "@Suneel1*"
+  name: "cHJvamVjdA=="
+#  name: "project"
 
   # DATABASE_URL = "postgresql://fait:Fait2024!!@localhost:5432/test5"
   #  postgresql://[username]:[password]@[host]:[port]/[database]
+  # mongodb://fait_modb:Fait2024!!@localhost:27071/"
+
+mongodb:
+  host: "localhost"
+  port: 27017
+  username: "ZmFpdF9tb2Ri"
+  password: "RmFpdDIwMjQhIQ=="
 
 
 

@@ -19,6 +19,10 @@ import routers.schools
 import routers.qualifications
 import routers.learning_network
 import routers.question_type
+import routers.admin
+import routers.backend_options
+import routers.question_generation
+import routers.question_gen_manager
 
 scriptDir = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(scriptDir)
@@ -45,13 +49,16 @@ app.add_middleware(
 )
 
 #app.include_router(server.router, tags=['server'])
+app.include_router(routers.admin.router, tags=["admins"])
 app.include_router(routers.user.router, tags=['user'])
 app.include_router(routers.subjects.router, tags=['subjects'])
 app.include_router(routers.schools.router, tags=['schools'])
 app.include_router(routers.qualifications.router, tags=['qualifications'])
 app.include_router(routers.learning_network.router, tags=['learning_network'])
 app.include_router(routers.question_type.router, tags=['question_type'])
-
+app.include_router(routers.backend_options.router, tags=['backend_options'])
+app.include_router(routers.question_generation.router, tags=['mongodb'])
+app.include_router(routers.question_gen_manager.router, tags=['question_gen_manager'])
 
 @app.exception_handler(ValidationError)
 async def validation_exception_handler(request: Request, exc: ValidationError):

@@ -1,10 +1,7 @@
 from pydantic import BaseModel, Field, EmailStr, constr, validator, conlist, conint,field_validator,model_validator
-from typing import Optional, Dict, Union, List,Any
-from datetime import date
-from typing import Literal
+from typing import Optional, Dict, Union, List, Any, Literal
 import re
 from datetime import datetime
-from pydantic_core.core_schema import FieldValidationInfo
 
 class Subject(BaseModel):
     """

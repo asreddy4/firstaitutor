@@ -15,13 +15,13 @@ from models import creator
 async def main():
     try:
         await creator.create_table()
-        log.critical(
-            "email_not_found",
-            "No email was found with this token",
-            token="token",
-            func="email_info",
-        )
-        logging.shutdown()
+        # log.critical(
+        #     "email_not_found",
+        #     "No email was found with this token",
+        #     token="token",
+        #     func="email_info",
+        # )
+        # logging.shutdown()
         uvicorn.run('config:app', host='127.0.0.1', port=8000, reload=True)
     except Exception:
         print(traceback.format_exc())
