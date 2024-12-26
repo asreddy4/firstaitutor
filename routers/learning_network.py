@@ -1,6 +1,3 @@
-from idlelib.debugobj_r import remote_object_tree_item
-from pickle import FALSE, FLOAT
-
 from fastapi import APIRouter, Request, Header, HTTPException, status, Request, UploadFile
 from fastapi import Response as resp
 from fastapi.responses import FileResponse
@@ -86,23 +83,23 @@ async def create_learning_network(ln_net: LearningNetwork, token: str = Header(.
             port=str(configfile["database"]["port"])
         )
         existing_id_s = await conn.fetchval(
-            'SELECT id FROM subject WHERE subject_id = $1', ln_net.subject_id)
+            'SELECT subject_id FROM subject WHERE subject_id = $1', ln_net.subject_id)
         if existing_id_s is None:
             return Response(
                 status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
-                message=f"This subject has not been registered with ID {existing_id_s if existing_id_s else ln_net.subject_id}",
+                message=f"The subject_id '{ln_net.subject_id}' is not exists in database",
                 data=None,
                 detail=None
             )
         # Check if a qualification with the same details already exists
-        query = """SELECT id FROM learning_network WHERE ln_id = $1"""
+        query = """SELECT ln_id FROM learning_network WHERE ln_id = $1"""
 
         existing_id = await conn.fetchval(query, ln_net.ln_id)
 
         if existing_id:
             return Response(
                 status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
-                message=f"This learning_network data has already been registered with ID {existing_id}"
+                message=f"This learning_network id '{ln_net.ln_id}' already exists in database"
             )
 
         # Insert the new qualification record without q_id
@@ -115,14 +112,54 @@ async def create_learning_network(ln_net: LearningNetwork, token: str = Header(.
             )
             RETURNING id
         """
+        parent_nodes = ln_net.parent_nodes
+        if ln_net.is_subject_head_node:
+            if ln_net.ln_id[:4] not in parent_nodes:
+                return Response(
+                    status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+                    message=f"The parent nodes list must has mandatory parent of learning_network, '{ln_net.ln_id[:4]}'"
+                )
+            for i in parent_nodes:
+                if i != ln_net.ln_id[:4]:
+                    if len(i) != 9:
+                        return Response(
+                            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+                            message=f"Optional parent nodes must be same level of learning_network, but it has '{i}'"
+                        )
+        elif ln_net.is_keynode:
+            if ln_net.ln_id[:9] not in parent_nodes:
+                return Response(
+                    status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+                    message=f"The parent nodes list must has mandatory parent of learning_network, '{ln_net.ln_id[:9]}'"
+                )
+            for i in parent_nodes:
+                if i != ln_net.ln_id[:9]:
+                    if len(i) != 14:
+                        return Response(
+                            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+                            message=f"Optional parent nodes must be same level of learning_network, but it has '{i}'"
+                        )
+        else:
+            if ln_net.ln_id[:14] not in parent_nodes:
+                return Response(
+                    status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+                    message=f"The parent nodes list must has mandatory parent of learning_network, '{ln_net.ln_id[:14]}'"
+                )
+            for i in parent_nodes:
+                if i != ln_net.ln_id[:14]:
+                    if len(i) != 19:
+                        return Response(
+                            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+                            message=f"Optional parent nodes must be same level of learning_network, but it has '{i}'"
+                        )
 
-        parent = ','.join(ln_net.parent_nodes) if ln_net.parent_nodes else None
+        # parent = ','.join(ln_net.parent_nodes) if ln_net.parent_nodes else None
         learning_network_id = await conn.fetchval(
             insert_query,
             ln_net.ln_id,
             ln_net.title,
             ln_net.subject_id,
-            parent,
+            json.dumps(ln_net.parent_nodes),
             ln_net.max_order,
             ln_net.back_learning_level,
             ln_net.is_subject_head_node,
@@ -140,7 +177,7 @@ async def create_learning_network(ln_net: LearningNetwork, token: str = Header(.
     except Exception as e:
         return Response(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            message=f"Failed to create qualification: {str(e)}"
+            message=f"Failed to create learning_network:: {str(e)}"
         )
     finally:
         await conn.close()
@@ -163,7 +200,7 @@ async def create_learning_network(ln_net: LearningNetwork, token: str = Header(.
                                         "ln_id": "001a-001a-001a-001a",
                                         "title": "The title must be a non-empty string.",
                                         "subject_id": "001a",
-                                        "parent_nodes": ['001a-001a','001a-002a'],
+                                        "parent_nodes": ['001a-001a-001a','001a-001a-001a-001a'],
                                         "max_order": 5,
                                         "back_learning_level": 2,
                                         "is_subject_head_node": False,
@@ -256,7 +293,7 @@ async def get_learning_network(token: str = Header(...)):
                 "ln_id": qual['ln_id'],
                 "title": qual['title'],
                 "subject_name": sub_name,
-                "parent_nodes": qual['parent_nodes'],
+                "parent_nodes": json.loads(qual['parent_nodes']),
                 "max_order": qual['max_order'],
                 "back_learning_level": qual['back_learning_level'],
                 "is_subject_head_node":qual['is_subject_head_node'],
@@ -280,7 +317,7 @@ async def get_learning_network(token: str = Header(...)):
     except Exception as e:
         return dict(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            message=f"Failed to retrieve qualifications: {str(e)}",
+            message=f"Failed to retrieve learning_network:: {str(e)}",
             data=None,
             detail=None
         )
@@ -465,21 +502,64 @@ async def update_learning_network(qualification_update: UpdateLearningNetwork, t
                 detail=None
             )
         existing_id_s = await conn.fetchval(
-            'SELECT * FROM subject WHERE subject_id = $1', qualification_update.subject_id)
+            'SELECT subject_id FROM subject WHERE subject_id = $1', qualification_update.subject_id)
 
         if existing_id_s is None:
             return Response(
                 status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
-                message=f"This subject has not been registered with ID {existing_id_s if existing_id_s else
-                qualification_update.subject_id}",
+                message=f"The subject_id '{qualification_update.subject_id}' is not exists in database",
                 data=None,
                 detail=None
             )
         # Prepare fields for update
         update_fields = []
         update_values = []
-        parent = ','.join(qualification_update.parent_nodes) if qualification_update.parent_nodes else None
-        if existing_qualification["ln_id"] == qualification_update.ln_id and existing_qualification["title"] == qualification_update.title and existing_qualification["subject_id"] == existing_id_s and existing_qualification["parent_nodes"] == parent and existing_qualification["max_order"] == qualification_update.max_order and existing_qualification["back_learning_level"] == qualification_update.back_learning_level and existing_qualification["is_subject_head_node"] == qualification_update.is_subject_head_node and existing_qualification["is_keynode"] == qualification_update.is_keynode and existing_qualification["support_url"] == qualification_update.support_url:
+        parent_nodes = qualification_update.parent_nodes
+        if qualification_update.is_subject_head_node:
+            if qualification_update.ln_id[:4] not in parent_nodes:
+                return Response(
+                    status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+                    message=f"The parent nodes list must has mandatory parent of learning_network, '{qualification_update.ln_id[:4]}'"
+                )
+            for i in parent_nodes:
+                if i != qualification_update.ln_id[:4]:
+                    if len(i) != 9:
+                        return Response(
+                            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+                            message=f"Optional parent nodes must be same level of learning_network, but it has '{i}'"
+                        )
+        elif qualification_update.is_keynode:
+            if qualification_update.ln_id[:9] not in parent_nodes:
+                return Response(
+                    status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+                    message=f"The parent nodes list must has mandatory parent of learning_network, '{qualification_update.ln_id[:9]}'"
+                )
+            for i in parent_nodes:
+                if i != qualification_update.ln_id[:9]:
+                    if len(i) != 14:
+                        return Response(
+                            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+                            message=f"Optional parent nodes must be same level of learning_network, but it has '{i}'"
+                        )
+        else:
+            if qualification_update.ln_id[:14] not in parent_nodes:
+                return Response(
+                    status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+                    message=f"The parent nodes list must has mandatory parent of learning_network, '{qualification_update.ln_id[:14]}'"
+                )
+            for i in parent_nodes:
+                if i != qualification_update.ln_id[:14]:
+                    if len(i) != 19:
+                        return Response(
+                            status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
+                            message=f"Optional parent nodes must be same level of learning_network, but it has '{i}'"
+                        )
+        # parent = ','.join(qualification_update.parent_nodes) if qualification_update.parent_nodes else None
+        parent = json.dumps(qualification_update.parent_nodes)
+        if (existing_qualification["ln_id"] == qualification_update.ln_id and existing_qualification["title"] == qualification_update.title and
+                existing_qualification["subject_id"] == existing_id_s and existing_qualification["parent_nodes"] == parent and
+                existing_qualification["max_order"] == qualification_update.max_order and existing_qualification["back_learning_level"] == qualification_update.back_learning_level and
+                existing_qualification["is_subject_head_node"] == qualification_update.is_subject_head_node and existing_qualification["is_keynode"] == qualification_update.is_keynode and existing_qualification["support_url"] == qualification_update.support_url):
             return Response(
                 status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
                 message="No data has been changed, no editing is done",
@@ -489,12 +569,12 @@ async def update_learning_network(qualification_update: UpdateLearningNetwork, t
         if qualification_update.ln_id is not None:
             if existing_qualification['ln_id'] != qualification_update.ln_id:
                 existing_id = await conn.fetchval(
-                    'SELECT id FROM learning_network WHERE ln_id = $1',
+                    'SELECT ln_id FROM learning_network WHERE ln_id = $1',
                     qualification_update.ln_id)
                 if existing_id:
                     return Response(
                         status_code=status.HTTP_422_UNPROCESSABLE_ENTITY,
-                        message=f"This ln_id has already been registered with ID {existing_id}",
+                        message=f"The learning network id '{qualification_update.ln_id}' already exists in database",
                         data=None,
                         detail=None
                     )
@@ -556,7 +636,7 @@ async def update_learning_network(qualification_update: UpdateLearningNetwork, t
     except Exception as e:
         return Response(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            message=f"Failed to update qualification: {str(e)}",
+            message=f"Failed to update learning_network: {str(e)}",
             data=None,
             detail=None
         )
@@ -593,38 +673,45 @@ async def download_learning_network(token: str = Header(...)):
             data=None,
             detail=None
         )
+    try:
+        conn = await asyncpg.connect(
+            user=(base64.b64decode(configfile["database"]["username"])).decode("utf-8"),
+            password=(base64.b64decode(configfile["database"]["password"])).decode("utf-8"),
+            database=(base64.b64decode(configfile["database"]["name"])).decode("utf-8"),
+            host=str(configfile["database"]["host"]),
+            port=str(configfile["database"]["port"])
+        )
+        query = """
+                SELECT id, ln_id, title, subject_id, parent_nodes, max_order, back_learning_level, is_subject_head_node, is_keynode, support_url, time_created, time_last_edited, last_created_user_id
+                FROM learning_network  
+                """
+        records = await conn.fetch(query)
+        learning_network_list = [dict(record) for record in records]
+        await conn.close()
+        headers = ['id', 'ln_id', 'title', 'subject_id', 'parent_nodes', 'max_order', 'back_learning_level', 'is_subject_head_node', 'is_keynode', 'support_url', 'time_created', 'time_last_edited', 'last_created_user_id']
+        scriptDir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        file_path = scriptDir + f'/fait_back_res/backend_data_rep/learning_network_download_{timestamp}.csv'
+        with open(file_path, 'w', newline="") as csvfile:
+            writer = csv.DictWriter(csvfile, fieldnames=headers, restval="", extrasaction='ignore', lineterminator="\n")
+            writer.writeheader()
+            for record in learning_network_list:
+                writer.writerow(record)
 
-    conn = await asyncpg.connect(
-        user=(base64.b64decode(configfile["database"]["username"])).decode("utf-8"),
-        password=(base64.b64decode(configfile["database"]["password"])).decode("utf-8"),
-        database=(base64.b64decode(configfile["database"]["name"])).decode("utf-8"),
-        host=str(configfile["database"]["host"]),
-        port=str(configfile["database"]["port"])
-    )
-    query = """
-            SELECT id, ln_id, title, subject_id, parent_nodes, max_order, back_learning_level, is_subject_head_node, is_keynode, support_url, time_created, time_last_edited, last_created_user_id
-            FROM learning_network  
-            """
-    records = await conn.fetch(query)
-    learning_network_list = [dict(record) for record in records]
-    await conn.close()
-    headers = ['id', 'ln_id', 'title', 'subject_id', 'parent_nodes', 'max_order', 'back_learning_level', 'is_subject_head_node', 'is_keynode', 'support_url', 'time_created', 'time_last_edited', 'last_created_user_id']
-    output = StringIO()
-    writer = csv.DictWriter(output, fieldnames = headers, restval="", extrasaction='ignore', lineterminator= "\n")
-    writer.writeheader()
-    for record in learning_network_list:
-        writer.writerow(record)
+        return Response(
+            status_code=status.HTTP_200_OK,
+            message=f"File created successfully.",
+            data={'filename': f'learning_network_download_{timestamp}.csv'},
+            detail=None
+        )
+    except Exception as e:
+        return Response(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            message=f"Failed to download learning_network: {str(e)}",
+            data=None,
+            detail=None
+        )
 
-    byte_output = BytesIO()
-    byte_output.write(output.getvalue().encode('utf-8'))
-    byte_output.seek(0)
-    filename = "learning_network.csv"
-
-    return resp(
-        content=byte_output.read(),
-        media_type="text/csv",
-        headers={"Content-Disposition": f"attachment; filename={filename}"}
-    )
 
 @router.post("/learning_network/upload", summary="Upload learning_networks", tags=["learning_network"])
 async def upload_learning_network(file: UploadFile, token: str = Header(...)):
@@ -673,7 +760,7 @@ async def upload_learning_network(file: UploadFile, token: str = Header(...)):
 
     try:
         content = await file.read()
-        csv_data = StringIO(content.decode('utf-8'))
+        csv_data = content.decode('utf-8').splitlines()
         reader = csv.DictReader(csv_data)
         new_ln_ids = []
         unsuccessful_list = []
@@ -685,7 +772,6 @@ async def upload_learning_network(file: UploadFile, token: str = Header(...)):
             is_subject_head_node = row['is_subject_head_node']
             back_learning = row['back_learning_level']
             max_order = row['max_order']
-
             if is_keynode.strip().lower() == 'true' and is_subject_head_node.strip().lower() == 'true':
                 validation = False
 
@@ -705,6 +791,30 @@ async def upload_learning_network(file: UploadFile, token: str = Header(...)):
                         validation = False
                 if int(back_learning) > int(max_order):
                     validation = False
+
+                parent_nodes = json.loads(row['parent_nodes'])
+                if is_subject_head_node == 'true':
+                    if value[:4] not in parent_nodes:
+                        validation = False
+                    for i in parent_nodes:
+                        if i != value[:4]:
+                            if len(i) != 9:
+                                validation = False
+                elif is_keynode == 'true':
+                    if value[:9] not in parent_nodes:
+                        validation = False
+                    for i in parent_nodes:
+                        if i != value[:9]:
+                            if len(i) != 14:
+                                validation = False
+                else:
+                    if value[:14] not in parent_nodes:
+                        validation = False
+                    for i in parent_nodes:
+                        if i != value[:14]:
+                            if len(i) != 19:
+                                validation = False
+
             except Exception as e:
                 validation = False
 

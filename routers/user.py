@@ -81,45 +81,51 @@ async def login_user(login: Login):
        """
     record = await conn.fetchrow(query, login.email)
     await conn.close()
+    try:
+        if not record:
+            return Response(status_code=status.HTTP_400_BAD_REQUEST, message="Incorrect email or password")
 
-    if not record:
-        return Response(status_code=status.HTTP_400_BAD_REQUEST, message="Incorrect email or password")
+        if record["is_admin"] is False:
+            return Response(
+                status_code=status.HTTP_403_FORBIDDEN,
+                message="You do not have access to this section",
+                data=None,
+                detail=None,
+            )
+        user_id = record['id']
+        # loop = asyncio.get_running_loop()
+        # count = await loop.run_in_executor(ThreadPoolExecutor(), count_records_by_user_id, user_id)
+        # if count >= 3:
+        #     return Response(
+        #         status_code=status.HTTP_300_MULTIPLE_CHOICES,
+        #         message="You are logged in on 3 devices at the same time and you cannot login",
+        #         data=None,
+        #         detail=None
+        #     )
 
-    if record["is_admin"] is False:
+        if record["password"] != login.password:
+            return Response(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                message="Incorrect email or password",
+                data=None,
+                detail=None
+            )
+
+        loop = asyncio.get_running_loop()
+        token = await loop.run_in_executor(ThreadPoolExecutor(), save_user_token, user_id, False)
+
         return Response(
-            status_code=status.HTTP_403_FORBIDDEN,
-            message="You do not have access to this section",
-            data=None,
-            detail=None,
-        )
-    user_id = record['id']
-    # loop = asyncio.get_running_loop()
-    # count = await loop.run_in_executor(ThreadPoolExecutor(), count_records_by_user_id, user_id)
-    # if count >= 3:
-    #     return Response(
-    #         status_code=status.HTTP_300_MULTIPLE_CHOICES,
-    #         message="You are logged in on 3 devices at the same time and you cannot login",
-    #         data=None,
-    #         detail=None
-    #     )
-
-    if record["password"] != login.password:
-        return Response(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            message="Incorrect email or password",
-            data=None,
+            status_code=status.HTTP_200_OK,
+            message="Login successful",
+            data={"token": token},
             detail=None
         )
-
-    loop = asyncio.get_running_loop()
-    token = await loop.run_in_executor(ThreadPoolExecutor(), save_user_token, user_id, False)
-
-    return Response(
-        status_code=status.HTTP_200_OK,
-        message="Login successful",
-        data={"token": token},
-        detail=None
-    )
+    except Exception as e:
+        await conn.close()
+        return Response(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            message=f"Failed to login: {str(e)}"
+        )
 
 @router.post("/user/logout", response_model=Response, summary="Logout", tags=["user"],
              responses={

@@ -1,0 +1,188 @@
+[
+    {
+      "q_id": "001a-001a-001a-001a-0200a_1_21",
+      "qtext": {
+        "section1": "<p><strong>Add and simplify the two fractions below and complete the blank spaces with your answer.</strong></p>",
+        "section2": "<br><table style='border:1px solid transparent;margin: 0px auto;'><tbody><tr><td rowspan='2'>$\\frac{1}{8} + \\frac{3}{16}$ =</td><td style='border-bottom:1pt solid black;'><input type =“number” step=\"1\" size=\"3\" name=blank1/></td></tr><tr><td><input type =“number” step=\"1\" size=\"3\" name=blank2/></td></tr></tbody></table><br>"
+      },
+      "q_answers": [
+        2,
+        5,
+        16
+      ],
+      "q_hints": {
+        "1_html": "<h6> The video below can help you to review the numbers one to ten and their words.</h6><iframe width='560' height='315' src='https://www.youtube.com/embed/CoCmsyFQ_Xc?si=n3VYHDhe_Zl7P5jm' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>'",
+        "2_direct_guide": "<p>Think about the <strong>common denominator</strong> between 8 and 16. Change the fractions to their equivalent with that common denominator and then add the two fractions.</p>",
+        "3_solution_step": "<p>First, let's think about what the common denominator is between 8 and 16. This way, we can change each fraction to have the common denominator. We will be able to add the fractions when they have a common denominator.</p><p>The common denominator between 8 and 16 is <strong>16</strong>.</p>",
+        "4_direct_guide": "<p>The <strong>common denominator</strong> between 8 and 16 is 16</p>"
+      },
+      "q_solution_steps": {
+        "step1": "<p>First, let's think about what the common denominator is between 8 and 16. This way, we can change each fraction to have the common denominator. We will be able to add the fractions when they have a common denominator.</p><p>The common denominator between 8 and 16 is <strong>16</strong>.</p>",
+        "step2": "<p>Converting fractions into form with the common denominator, we get</p><p style='text-align:center;'><strong>$$\\frac{2&#215;1}{2&#215;8} + \\frac{1&#215;3}{1&#215;16}$$</strong></p>",
+        "step3": "<p>Completing the operations, we get</p><p style='text-align:center;'><strong>$$\\frac{2}{16} + \\frac{3}{16}$$</strong></p>",
+        "step4": "<p>Finally, we can write one of the denominators and add the numerators.</p><p style='text-align:center;'><strong>$$\\frac{5}{16}$$</strong></p>"
+      },
+      "step_learning_net_dependency": [
+        "001a-001a-001a-001a-0180a",
+        "001a-001a-001a-001a-0180a",
+        "001a-001a-001a-001a-0180a",
+        "001a-001a-001a-001a-0180a",
+        "001a-001a-001a-001a-0180a"
+      ]
+    },
+    {
+      "q_id": "001a-001a-001a-001a-0200a_1_22",
+      "qtext": {
+        "section1": "<p><p><strong>Add and simplify the two fractions below and fill out the blank spaces with your answer.</strong></p>",
+        "section2": "<br><table style='border:1px solid transparent;margin: 0px auto;'><tbody><tr><td rowspan='2'>$\\frac{4}{19} + \\frac{1}{13}$ =</td><td style='border-bottom:1pt solid black;'><input type =“number” step=\"1\" size=\"3\" name=blank1/></td></tr><tr><td><input type =“number” step=\"1\" size=\"3\" name=blank2/></td></tr></tbody></table><br>"
+      },
+      "q_answers": [
+        2,
+        71,
+        247
+      ],
+      "q_hints": {
+        "1_html": "<h6> The video below can help you to review the numbers one to ten and their words.</h6><iframe width='560' height='315' src='https://www.youtube.com/embed/CoCmsyFQ_Xc?si=n3VYHDhe_Zl7P5jm' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>'",
+        "2_direct_guide": "<p>Think about the <strong>common denominator</strong> between 19 and 13. Change the fractions to their equivalent with that common denominator and then add the two fractions.</p>",
+        "3_solution_step": "<p>First, let's think about what the common denominator is between 19 and 13. This way, we can change each fraction to have the common denominator. We will be able to add the fractions when they have a common denominator.</p><p>The common denominator between 19 and 13 is <strong>247</strong>.</p>",
+        "4_direct_guide": "<p>The <strong>common denominator</strong> between 19 and 13 is 247</p>"
+      },
+      "q_solution_steps": {
+        "step1": "<p>First, let's think about what the common denominator is between 19 and 13. This way, we can change each fraction to have the common denominator. We will be able to add the fractions when they have a common denominator.</p><p>The common denominator between 19 and 13 is <strong>247</strong>.</p>",
+        "step2": "<p>Converting fractions into form with the common denominator, we get</p><p style='text-align:center;'><strong>$$\\frac{13&#215;4}{13&#215;19} + \\frac{19&#215;1}{19&#215;13}$$</strong></p>",
+        "step3": "<p>Completing the operations, we get</p><p style='text-align:center;'><strong>$$\\frac{52}{247} + \\frac{19}{247}$$</strong></p>",
+        "step4": "<p>Finally, we can write one of the denominators and add the numerators.</p><p style='text-align:center;'><strong>$$\\frac{71}{247}$$</strong></p>"
+      },
+      "step_learning_net_dependency": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
+    },
+    {
+      "q_id": "001a-001a-001a-001a-0200a_1_23",
+      "qtext": {
+        "section1": "<p><strong>Add and simplify the two fractions below and complete the blank spaces with your answer.</strong></p>",
+        "section2": "<br><table style='border:1px solid transparent;margin: 0px auto;'><tbody><tr><td rowspan='2'>$\\frac{3}{4} + \\frac{7}{12}$ =</td><td style='border-bottom:1pt solid black;'><input type =“number” step=\"1\" size=\"3\" name=blank1/></td></tr><tr><td><input type =“number” step=\"1\" size=\"3\" name=blank2/></td></tr></tbody></table><br>"
+      },
+      "q_answers": [
+        2,
+        4,
+        3
+      ],
+      "q_hints": {
+        "1_html": "<h6> The video below can help you to review the numbers one to ten and their words.</h6><iframe width='560' height='315' src='https://www.youtube.com/embed/CoCmsyFQ_Xc?si=n3VYHDhe_Zl7P5jm' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>'",
+        "2_direct_guide": "<p>Think about the <strong>common denominator</strong> between 4 and 12. Change the fractions to their equivalent with that common denominator and then add the two fractions.</p>",
+        "3_solution_step": "<p>First, let's think about what the common denominator is between 4 and 12. This way, we can change each fraction to have the common denominator. We will be able to add the fractions when they have a common denominator.</p><p>The common denominator between 4 and 12 is <strong>12</strong>.</p>",
+        "4_direct_guide": "<p>The <strong>common denominator</strong> between 4 and 12 is 12</p>"
+      },
+      "q_solution_steps": {
+        "step1": "<p>First, let's think about what the common denominator is between 4 and 12. This way, we can change each fraction to have the common denominator. We will be able to add the fractions when they have a common denominator.</p><p>The common denominator between 4 and 12 is <strong>12</strong>.</p>",
+        "step2": "<p>Converting fractions into form with the common denominator, we get</p><p style='text-align:center;'><strong>$$\\frac{3&#215;3}{3&#215;4} + \\frac{1&#215;7}{1&#215;12}$$</strong></p>",
+        "step3": "<p>Completing the operations, we get</p><p style='text-align:center;'><strong>$$\\frac{9}{12} + \\frac{7}{12}$$</strong></p>",
+        "step4": "<p>Finally, we can write one of the denominators and add the numerators.</p><p style='text-align:center;'><strong>$$\\frac{16}{12}$$</strong></p>"
+      },
+      "step_learning_net_dependency": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
+    },
+    {
+      "q_id": "001a-001a-001a-001a-0200a_2_21",
+      "qtext": {
+        "section1": "<p><strong>Add two fractions below and simplify the final fraction. Fill out the blank spaces with your answer.</strong></p>",
+        "section2": "<br><table style='border:1px solid transparent;margin: 0px auto;'><tbody><tr><td rowspan='2'>$\\frac{3}{2} + \\frac{7}{10}$ =</td><td style='border-bottom:1pt solid black;'><input type =“number” step=\"1\" size=\"3\" name=blank1/></td></tr><tr><td><input type =“number” step=\"1\" size=\"3\" name=blank2/></td></tr></tbody></table><br>"
+      },
+      "q_answers": [
+        2,
+        11,
+        5
+      ],
+      "q_hints": {
+        "1_html": "<h6> The video below can help you to review the numbers one to ten and their words.</h6><iframe width='560' height='315' src='https://www.youtube.com/embed/CoCmsyFQ_Xc?si=n3VYHDhe_Zl7P5jm' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>'",
+        "2_direct_guide": "<p>Think about the <strong>common denominator</strong> between 2 and 10. Change the fractions to their equivalent with that common denominator and then add the two fractions.</p>",
+        "3_solution_step": "<p>First, let's think about what the common denominator is between 2 and 10. This way, we can change each fraction to have the common denominator. We will be able to add the fractions when they have a common denominator.</p><p>The common denominator between 2 and 10 is <strong>10</strong>.</p>",
+        "4_direct_guide": "<p>The <strong>common denominator</strong> between 2 and 10 is 10</p>"
+      },
+      "q_solution_steps": {
+        "step1": "<p>First, let's think about what the common denominator is between 2 and 10. This way, we can change each fraction to have the common denominator. We will be able to add the fractions when they have a common denominator.</p><p>The common denominator between 2 and 10 is <strong>10</strong>.</p>",
+        "step2": "<p>Converting fractions into form with the common denominator, we get</p><p style='text-align:center;'><strong>$$\\frac{5&#215;3}{5&#215;2} + \\frac{1&#215;7}{1&#215;10}$$</strong></p>",
+        "step3": "<p>Completing the operations, we get</p><p style='text-align:center;'><strong>$$\\frac{15}{10} + \\frac{7}{10}$$</strong></p>",
+        "step4": "<p>Finally, we can write one of the denominators and add the numerators.</p><p style='text-align:center;'><strong>$$\\frac{22}{10}$$</strong></p>"
+      },
+      "step_learning_net_dependency": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
+    },
+    {
+      "q_id": "001a-001a-001a-001a-0200a_2_22",
+      "qtext": {
+        "section1": "<p><p><strong>Add and simplify the two fractions below and fill out the blank spaces with your answer.</strong></p>",
+        "section2": "<br><table style='border:1px solid transparent;margin: 0px auto;'><tbody><tr><td rowspan='2'>$\\frac{7}{4} + \\frac{8}{3}$ =</td><td style='border-bottom:1pt solid black;'><input type =“number” step=\"1\" size=\"3\" name=blank1/></td></tr><tr><td><input type =“number” step=\"1\" size=\"3\" name=blank2/></td></tr></tbody></table><br>"
+      },
+      "q_answers": [
+        2,
+        53,
+        12
+      ],
+      "q_hints": {
+        "1_html": "<h6> The video below can help you to review the numbers one to ten and their words.</h6><iframe width='560' height='315' src='https://www.youtube.com/embed/CoCmsyFQ_Xc?si=n3VYHDhe_Zl7P5jm' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>'",
+        "2_direct_guide": "<p>Think about the <strong>common denominator</strong> between 4 and 3. Change the fractions to their equivalent with that common denominator and then add the two fractions.</p>",
+        "3_solution_step": "<p>First, let's think about what the common denominator is between 4 and 3. This way, we can change each fraction to have the common denominator. We will be able to add the fractions when they have a common denominator.</p><p>The common denominator between 4 and 3 is <strong>12</strong>.</p>",
+        "4_direct_guide": "<p>The <strong>common denominator</strong> between 4 and 3 is 12</p>"
+      },
+      "q_solution_steps": {
+        "step1": "<p>First, let's think about what the common denominator is between 4 and 3. This way, we can change each fraction to have the common denominator. We will be able to add the fractions when they have a common denominator.</p><p>The common denominator between 4 and 3 is <strong>12</strong>.</p>",
+        "step2": "<p>Converting fractions into form with the common denominator, we get</p><p style='text-align:center;'><strong>$$\\frac{3&#215;7}{3&#215;4} + \\frac{4&#215;8}{4&#215;3}$$</strong></p>",
+        "step3": "<p>Completing the operations, we get</p><p style='text-align:center;'><strong>$$\\frac{21}{12} + \\frac{32}{12}$$</strong></p>",
+        "step4": "<p>Finally, we can write one of the denominators and add the numerators.</p><p style='text-align:center;'><strong>$$\\frac{53}{12}$$</strong></p>"
+      },
+      "step_learning_net_dependency": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
+    },
+    {
+      "q_id": "001a-001a-001a-001a-0200a_2_23",
+      "qtext": {
+        "section1": "<p><p><strong>Add and simplify the two fractions below and fill out the blank spaces with your answer.</strong></p>",
+        "section2": "<br><table style='border:1px solid transparent;margin: 0px auto;'><tbody><tr><td rowspan='2'>$\\frac{1}{5} + \\frac{1}{16}$ =</td><td style='border-bottom:1pt solid black;'><input type =“number” step=\"1\" size=\"3\" name=blank1/></td></tr><tr><td><input type =“number” step=\"1\" size=\"3\" name=blank2/></td></tr></tbody></table><br>"
+      },
+      "q_answers": [
+        2,
+        21,
+        80
+      ],
+      "q_hints": {
+        "1_html": "<h6> The video below can help you to review the numbers one to ten and their words.</h6><iframe width='560' height='315' src='https://www.youtube.com/embed/CoCmsyFQ_Xc?si=n3VYHDhe_Zl7P5jm' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>'",
+        "2_direct_guide": "<p>Think about the <strong>common denominator</strong> between 5 and 16. Change the fractions to their equivalent with that common denominator and then add the two fractions.</p>",
+        "3_solution_step": "<p>First, let's think about what the common denominator is between 5 and 16. This way, we can change each fraction to have the common denominator. We will be able to add the fractions when they have a common denominator.</p><p>The common denominator between 5 and 16 is <strong>80</strong>.</p>",
+        "4_direct_guide": "<p>The <strong>common denominator</strong> between 5 and 16 is 80</p>"
+      },
+      "q_solution_steps": {
+        "step1": "<p>First, let's think about what the common denominator is between 5 and 16. This way, we can change each fraction to have the common denominator. We will be able to add the fractions when they have a common denominator.</p><p>The common denominator between 5 and 16 is <strong>80</strong>.</p>",
+        "step2": "<p>Converting fractions into form with the common denominator, we get</p><p style='text-align:center;'><strong>$$\\frac{16&#215;1}{16&#215;5} + \\frac{5&#215;1}{5&#215;16}$$</strong></p>",
+        "step3": "<p>Completing the operations, we get</p><p style='text-align:center;'><strong>$$\\frac{16}{80} + \\frac{5}{80}$$</strong></p>",
+        "step4": "<p>Finally, we can write one of the denominators and add the numerators.</p><p style='text-align:center;'><strong>$$\\frac{21}{80}$$</strong></p>"
+      },
+      "step_learning_net_dependency": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
+    }
+  ]

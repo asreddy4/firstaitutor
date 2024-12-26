@@ -1,0 +1,206 @@
+[
+    {
+      "q_id": "001a-001a-001a-001a-0400a_1_21",
+      "qtext": {
+        "section1": "<p>Complete the operation and select the answer.</p>",
+        "section2": "<br><p style='text-align:center;'><strong>5&#215;3&#43;8=</strong></p><br>"
+      },
+      "question_selections": [
+        "int8",
+        55,
+        22,
+        16,
+        23,
+        38,
+        120,
+        18,
+        25
+      ],
+      "q_answers": {
+        "4": 23
+      },
+      "q_hints": {
+        "1_direct_guide": "<p>BIDMAS illustrates order of operations and stands for Brackets, Indices, Division, Multiplication, Addition, Subtraction.</p>",
+        "2_html": "<h6> The video below can help you to review the order of operations.</h6><iframe width='560' height='315' src='https://www.youtube.com/embed/70cAYYCJBuQ?si=RxZnpYI9R_jzEPqJ' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>'",
+        "3_solution_step": "<p>According to the order of operations, BIDMAS, the multiplication has priority over addition.</p><p>we can therefore, first complete the 5&#215;3 which is 15.</p>"
+      },
+      "q_solution_steps": {
+        "step1": "<p>According to the order of operations, BIDMAS, the multiplication has priority over addition.</p><p>we can therefore, first complete the 5&#215;3 which is 15.</p>",
+        "step2": "<p>We can then add 15 to 8. The final answer is 23."
+      },
+      "step_learning_net_dependency": [
+        "001a-001a-001a-001a-0180a",
+        "001a-001a-001a-001a-0180a"
+      ]
+    },
+    {
+      "q_id": "001a-001a-001a-001a-0400a_1_22",
+      "qtext": {
+        "section1": "<p>Select the answer for the operation below.</p>",
+        "section2": "<br><p style='text-align:center;'><strong>2&#215;10&#43;5=</strong></p><br>"
+      },
+      "question_selections": [
+        "int8",
+        30,
+        23,
+        100,
+        17,
+        45,
+        27,
+        25,
+        24
+      ],
+      "q_answers": {
+        "7": 25
+      },
+      "q_hints": {
+        "1_direct_guide": "<p>BIDMAS illustrates order of operations and stands for Brackets, Indices, Division, Multiplication, Addition, Subtraction.</p>",
+        "2_html": "<h6> The video below can help you to review the order of operations.</h6><iframe width='560' height='315' src='https://www.youtube.com/embed/70cAYYCJBuQ?si=RxZnpYI9R_jzEPqJ' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>'",
+        "3_solution_step": "<p>According to the order of operations, BIDMAS, the multiplication has priority over addition.</p><p>we can therefore, first complete the 2&#215;10 which is 20.</p>"
+      },
+      "q_solution_steps": {
+        "step1": "<p>According to the order of operations, BIDMAS, the multiplication has priority over addition.</p><p>we can therefore, first complete the 2&#215;10 which is 20.</p>",
+        "step2": "<p>We can then add 20 to 5. The final answer is 25."
+      },
+      "step_learning_net_dependency": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "q_id": "001a-001a-001a-001a-0400a_1_23",
+      "qtext": {
+        "section1": "<p>Select the answer for the operation below.</p>",
+        "section2": "<br><p style='text-align:center;'><strong>10&#215;3&#43;2=</strong></p><br>"
+      },
+      "question_selections": [
+        "int8",
+        22,
+        32,
+        31,
+        60,
+        34,
+        50,
+        62,
+        15
+      ],
+      "q_answers": {
+        "2": 32
+      },
+      "q_hints": {
+        "1_direct_guide": "<p>BIDMAS illustrates order of operations and stands for Brackets, Indices, Division, Multiplication, Addition, Subtraction.</p>",
+        "2_html": "<h6> The video below can help you to review the order of operations.</h6><iframe width='560' height='315' src='https://www.youtube.com/embed/70cAYYCJBuQ?si=RxZnpYI9R_jzEPqJ' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>'",
+        "3_solution_step": "<p>According to the order of operations, BIDMAS, the multiplication has priority over addition.</p><p>we can therefore, first complete the 10&#215;3 which is 30.</p>"
+      },
+      "q_solution_steps": {
+        "step1": "<p>According to the order of operations, BIDMAS, the multiplication has priority over addition.</p><p>we can therefore, first complete the 10&#215;3 which is 30.</p>",
+        "step2": "<p>We can then add 30 to 2. The final answer is 32."
+      },
+      "step_learning_net_dependency": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "q_id": "001a-001a-001a-001a-0400a_2_21",
+      "qtext": {
+        "section1": "<p>Complete the operation and select the answer.</p>",
+        "section2": "<br><p style='text-align:center;'><strong>12&#215;9&#43;10=</strong></p><br>"
+      },
+      "question_selections": [
+        "int8",
+        120,
+        228,
+        106,
+        117,
+        118,
+        31,
+        226,
+        1080
+      ],
+      "q_answers": {
+        "5": 118
+      },
+      "q_hints": {
+        "1_direct_guide": "<p>BIDMAS illustrates order of operations and stands for Brackets, Indices, Division, Multiplication, Addition, Subtraction.</p>",
+        "2_html": "<h6> The video below can help you to review the order of operations.</h6><iframe width='560' height='315' src='https://www.youtube.com/embed/70cAYYCJBuQ?si=RxZnpYI9R_jzEPqJ' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>'",
+        "3_solution_step": "<p>According to the order of operations, BIDMAS, the multiplication has priority over addition.</p><p>we can therefore, first complete the 12&#215;9 which is 108.</p>"
+      },
+      "q_solution_steps": {
+        "step1": "<p>According to the order of operations, BIDMAS, the multiplication has priority over addition.</p><p>we can therefore, first complete the 12&#215;9 which is 108.</p>",
+        "step2": "<p>We can then add 108 to 10. The final answer is 118."
+      },
+      "step_learning_net_dependency": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "q_id": "001a-001a-001a-001a-0400a_2_22",
+      "qtext": {
+        "section1": "<p>Select the answer for the operation below.</p>",
+        "section2": "<br><p style='text-align:center;'><strong>14&#215;12&#43;14=</strong></p><br>"
+      },
+      "question_selections": [
+        "int8",
+        364,
+        168,
+        182,
+        350,
+        184,
+        40,
+        2352,
+        181
+      ],
+      "q_answers": {
+        "3": 182
+      },
+      "q_hints": {
+        "1_direct_guide": "<p>BIDMAS illustrates order of operations and stands for Brackets, Indices, Division, Multiplication, Addition, Subtraction.</p>",
+        "2_html": "<h6> The video below can help you to review the order of operations.</h6><iframe width='560' height='315' src='https://www.youtube.com/embed/70cAYYCJBuQ?si=RxZnpYI9R_jzEPqJ' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>'",
+        "3_solution_step": "<p>According to the order of operations, BIDMAS, the multiplication has priority over addition.</p><p>we can therefore, first complete the 14&#215;12 which is 168.</p>"
+      },
+      "q_solution_steps": {
+        "step1": "<p>According to the order of operations, BIDMAS, the multiplication has priority over addition.</p><p>we can therefore, first complete the 14&#215;12 which is 168.</p>",
+        "step2": "<p>We can then add 168 to 14. The final answer is 182."
+      },
+      "step_learning_net_dependency": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "q_id": "001a-001a-001a-001a-0400a_2_23",
+      "qtext": {
+        "section1": "<p>Complete the operation and select the answer.</p>",
+        "section2": "<br><p style='text-align:center;'><strong>14&#215;4&#43;11=</strong></p><br>"
+      },
+      "question_selections": [
+        "int8",
+        66,
+        616,
+        69,
+        67,
+        210,
+        53,
+        123,
+        29
+      ],
+      "q_answers": {
+        "4": 67
+      },
+      "q_hints": {
+        "1_direct_guide": "<p>BIDMAS illustrates order of operations and stands for Brackets, Indices, Division, Multiplication, Addition, Subtraction.</p>",
+        "2_html": "<h6> The video below can help you to review the order of operations.</h6><iframe width='560' height='315' src='https://www.youtube.com/embed/70cAYYCJBuQ?si=RxZnpYI9R_jzEPqJ' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>'",
+        "3_solution_step": "<p>According to the order of operations, BIDMAS, the multiplication has priority over addition.</p><p>we can therefore, first complete the 14&#215;4 which is 56.</p>"
+      },
+      "q_solution_steps": {
+        "step1": "<p>According to the order of operations, BIDMAS, the multiplication has priority over addition.</p><p>we can therefore, first complete the 14&#215;4 which is 56.</p>",
+        "step2": "<p>We can then add 56 to 11. The final answer is 67."
+      },
+      "step_learning_net_dependency": [
+        "1",
+        "2"
+      ]
+    }
+  ]

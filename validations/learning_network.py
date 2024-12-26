@@ -1,7 +1,6 @@
 from pydantic import BaseModel, Field, EmailStr, constr, validator, conlist, conint,field_validator,model_validator
-from typing import Optional, Dict, Union, List,Any
+from typing import Optional, Dict, Union, List, Any, Literal
 from datetime import date
-from typing import Literal
 import re
 from datetime import datetime
 from pydantic_core.core_schema import FieldValidationInfo
@@ -20,8 +19,8 @@ class LearningNetwork(BaseModel):
     - subject_id (str): The unique identifier for the subject.
       - Format: '001a', '002b', etc.
       - Description: The unique identifier for the subject with the format 'XXXy', where X is a digit and y is a letter.
-    - parent_nodes (Optional[str]): A comma-separated list of parent nodes.
-      - Example: "001a-001a"
+    - parent_nodes (Optional[List[str]]): A comma-separated list of parent nodes.
+      - Example: ["001a-001a-001a", "001a-001a-001a-001a"]
       - Description: Optional field that can be empty or a comma-separated list.
     - max_order (Optional[int]): The maximum order of the qualification.
       - Example: 5
@@ -59,7 +58,7 @@ class LearningNetwork(BaseModel):
     parent_nodes: Optional[List[str]] = Field(
         default=None,
         description="An optional comma-separated list of parent nodes.",
-        example=['001a-001a','001a-002a']
+        example=['001a-001a-001a','001a-001a-001a-001a']
     )
     max_order: int = Field(
         default=None,
@@ -171,8 +170,8 @@ class UpdateLearningNetwork(BaseModel):
     - subject_id (int): An integer identifier for the subject.
       - Example: 123
       - Description: The subject ID must be an integer and cannot be empty.
-    - parent_nodes (Optional[str]): A comma-separated list of parent nodes.
-      - Example: "001a-001a"
+    - parent_nodes (Optional[List[str]]): A comma-separated list of parent nodes.
+      - Example: ['001a-001a-001a', '001a-001a-001a-001a']
       - Description: Optional field that can be empty or a comma-separated list.
     - max_order (Optional[int]): The maximum order of the qualification.
       - Example: 5
@@ -214,7 +213,7 @@ class UpdateLearningNetwork(BaseModel):
     parent_nodes: Optional[List[str]] = Field(
         default=None,
         description="An optional comma-separated list of parent nodes.",
-        example=['001a-001a', '001a-002a']
+        example=['001a-001a-001a', '001a-001a-001a-001a']
     )
     max_order: int = Field(
         default=None,

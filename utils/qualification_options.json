@@ -1,0 +1,48 @@
+{
+  "qualification_var": [
+      "Foundation",
+      "Higher"
+  ],
+    "qualification_org": [
+      "Edexcel",
+      "OCR",
+      "AQA",
+      "CCEA",
+      "WJEC",
+      "SQL"
+  ],
+    "qualification_modules": [
+      "Pure Mathematics 1",
+      "Pure Mathematics 2",
+      "Statistics and Mechanics 1"
+  ],
+    "study_levels": [
+      "Key Stage 1",
+      "Key Stage 2",
+      "Key Stage 3",
+      "Key Stage 4 (GCSE)",
+      "N1",
+      "N2",
+      "N3",
+      "N4",
+      "N5",
+      "AS Level",
+      "A Level"
+  ],
+    "qualification_grades": [
+      "U",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "A",
+      "B",
+      "C",
+      "D"
+    ]
+}

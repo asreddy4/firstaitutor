@@ -1,0 +1,224 @@
+[
+    {
+      "q_id": "001a-001a-001a-001a-0001a_1_21",
+      "qtext": "Match the numbers on the left to the words on the right.",
+      "q_options": {
+        "match3": {
+          "int5": "char5",
+          "1": "Four",
+          "4": "One",
+          "5": "Eight",
+          "6": "Twenty",
+          "16": "Five"
+        }
+      },
+      "q_answers": {
+        "match3": {
+          "1": "One", 
+          "4": "Four",
+          "5": "Five"
+        }
+      },
+      "q_hints": {
+        "1_html": "<h6> The video below can help you to review the numbers one to ten and their words.</h6><iframe width='560' height='315' src='https://www.youtube.com/embed/HG361wJyDY0?si=BiCikdgi-GNvgPew' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>'",
+        "2_direct_guide": "<p>The words for numbers 1 to 10 are:</p><p>One, Two, Three, Four, Five, Six, Seven, Eight, Nine, &nbsp;Ten</p>",
+        "3_solution_step": "<p>The left integer number <strong>4</strong> matches its word equivalent <strong>Four</strong>.</p>",
+        "4_single_match": "5 matches to Five"
+      },
+      "q_solution_steps": {
+        "step1": "<p>The left integer number <strong>4</strong> matches its word equivalent <strong>Four</strong>.</p>",
+        "step2": "<p>The left integer number <strong>5</strong> matches its word equivalent <strong>Five</strong>.</p>",
+        "step3": "<p>The left integer number <strong>1</strong> matches its word equivalent <strong>One</strong>.</p>"
+      },
+      "step_learning_net_dependency": [
+        "001a-001a-001a-001a-0180a",
+        "001a-001a-001a-001a-0180a",
+        "001a-001a-001a-001a-0180a"
+      ]
+    },
+    {
+      "q_id": "001a-001a-001a-001a-0001a_1_22",
+      "qtext": "Match the integer numbers on the left hand to the relevant word on the right",
+      "q_options": {
+        "match3": {
+          "int5": "char5",
+          "1": "Four",
+          "3": "Ten",
+          "4": "One",
+          "8": "Twenty",
+          "16": "Eight"
+        }
+      },
+      "q_answers": {
+        "match3": {
+          "1": "One",
+          "4": "Four",
+          "8": "Eight"
+        }
+      },
+      "q_hints": {
+        "1_html": "<h6> The video below can help you to review the numbers one to ten and their words.</h6><iframe width='560' height='315' src='https://www.youtube.com/embed/HG361wJyDY0?si=BiCikdgi-GNvgPew' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>'",
+        "2_direct_guide": "<p>The words for numbers 1 to 10 are:</p><p>One, Two, Three, Four, Five, Six, Seven, Eight, Nine, &nbsp;Ten</p>",
+        "3_solution_step": "<p>The left integer number <strong>1</strong> matches its word equivalent <strong>One</strong>.</p>",
+        "4_single_match": "8 matches to Eight"
+      },
+      "q_solution_steps": {
+        "step1": "<p>The left integer number <strong>1</strong> matches its word equivalent <strong>One</strong>.</p>",
+        "step2": "<p>The left integer number <strong>8</strong> matches its word equivalent <strong>Eight</strong>.</p>",
+        "step3": "<p>The left integer number <strong>4</strong> matches its word equivalent <strong>Four</strong>.</p>"
+      },
+      "step_learning_net_dependency": [
+        "1",
+        "2",
+        "3"
+      ]
+    },
+    {
+      "q_id": "001a-001a-001a-001a-0001a_1_23",
+      "qtext": "Match the numbers on the left to the words on the right.",
+      "q_options": {
+        "match3": {
+          "int5": "char5",
+          "2": "Five",
+          "6": "Seven'",
+          "7": "Six",
+          "8": "Eight",
+          "1.5": "Twenty"
+        }
+      },
+      "q_answers": {
+        "match3": {
+          "6": "Six",
+          "7": "Seven",
+          "8": "Eight"
+        }
+      },
+      "q_hints": {
+        "1_html": "<h6> The video below can help you to review the numbers one to ten and their words.</h6><iframe width='560' height='315' src='https://www.youtube.com/embed/HG361wJyDY0?si=BiCikdgi-GNvgPew' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>'",
+        "2_direct_guide": "<p>The words for numbers 1 to 10 are:</p><p>One, Two, Three, Four, Five, Six, Seven, Eight, Nine, &nbsp;Ten</p>",
+        "3_solution_step": "<p>The left integer number <strong>8</strong> matches its word equivalent <strong>Eight</strong>.</p>",
+        "4_single_match": "6 matches to Six"
+      },
+      "q_solution_steps": {
+        "step1": "<p>The left integer number <strong>8</strong> matches its word equivalent <strong>Eight</strong>.</p>",
+        "step2": "<p>The left integer number <strong>6</strong> matches its word equivalent <strong>Six</strong>.</p>",
+        "step3": "<p>The left integer number <strong>7</strong> matches its word equivalent <strong>Seven</strong>.</p>"
+      },
+      "step_learning_net_dependency": [
+        "1",
+        "2",
+        "3"
+      ]
+    },
+    {
+      "q_id": "001a-001a-001a-001a-0001a_2_21",
+      "qtext": "Connect the integer numbers on the left hand to the relevant word on the right",
+      "q_options": {
+        "match3": {
+          "int": "char5",
+          "1": "Three",
+          "3": "Nin",
+          "6": "Four",
+          "9": "Six",
+          "1.5": "Nine"
+        }
+      },
+      "q_answers": {
+        "match3": {
+          "3": "Three",
+          "6": "Six",
+          "9": "Nine"
+        }
+      },
+      "q_hints": {
+        "1_html": "<h6> The video below can help you to review the numbers one to ten and their words.</h6><iframe width='560' height='315' src='https://www.youtube.com/embed/HG361wJyDY0?si=BiCikdgi-GNvgPew' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>'",
+        "2_direct_guide": "<p>The words for numbers 1 to 10 are:</p><p>One, Two, Three, Four, Five, Six, Seven, Eight, Nine, &nbsp;Ten</p>",
+        "3_solution_step": "<p>The left integer number <strong>6</strong> matches its word equivalent <strong>Six</strong>.</p>",
+        "4_single_match": "9 matches to Nine"
+      },
+      "q_solution_steps": {
+        "step1": "<p>The left integer number <strong>6</strong> matches its word equivalent <strong>Six</strong>.</p>",
+        "step2": "<p>The left integer number <strong>9</strong> matches its word equivalent <strong>Nine</strong>.</p>",
+        "step3": "<p>The left integer number <strong>3</strong> matches its word equivalent <strong>Three</strong>.</p>"
+      },
+      "step_learning_net_dependency": [
+        "1",
+        "2",
+        "3"
+      ]
+    },
+    {
+      "q_id": "001a-001a-001a-001a-0001a_2_22",
+      "qtext": "Connect the numbers on the left to the words on the right. You may have more than one connection.",
+      "q_options": {
+        "match3": {
+          "int5": "char5",
+          "2": "Two",
+          "3": "One",
+          "5": "Nine",
+          "9": "Eleven",
+          "12": "Five"
+        }
+      },
+      "q_answers": {
+        "match3": {
+          "2": "Two",
+          "5": "Five",
+          "9": "Nine"
+        }
+      },
+      "q_hints": {
+        "1_html": "<h6> The video below can help you to review the numbers one to ten and their words.</h6><iframe width='560' height='315' src='https://www.youtube.com/embed/HG361wJyDY0?si=BiCikdgi-GNvgPew' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>'",
+        "2_direct_guide": "<p>The words for numbers 1 to 10 are:</p><p>One, Two, Three, Four, Five, Six, Seven, Eight, Nine, &nbsp;Ten</p>",
+        "3_solution_step": "<p>The left integer number <strong>9</strong> matches its word equivalent <strong>Nine</strong>.</p>",
+        "4_single_match": "5 matches to Five"
+      },
+      "q_solution_steps": {
+        "step1": "<p>The left integer number <strong>9</strong> matches its word equivalent <strong>Nine</strong>.</p>",
+        "step2": "<p>The left integer number <strong>5</strong> matches its word equivalent <strong>Five</strong>.</p>",
+        "step3": "<p>The left integer number <strong>2</strong> matches its word equivalent <strong>Two</strong>.</p>"
+      },
+      "step_learning_net_dependency": [
+        "1",
+        "2",
+        "3"
+      ]
+    },
+    {
+      "q_id": "001a-001a-001a-001a-0001a_2_23",
+      "qtext": "Connect the integer numbers on the left hand to the relevant word on the right",
+      "q_options": {
+        "match3": {
+          "int5": "char5",
+          "1": "Four",
+          "5": "Five",
+          "9": "One",
+          "10": "Nine",
+          "12": "Twenty"
+        }
+      },
+      "q_answers": {
+        "match3": {
+          "1": "One",
+          "5": "Five",
+          "9": "Nine"
+        }
+      },
+      "q_hints": {
+        "1_html": "<h6> The video below can help you to review the numbers one to ten and their words.</h6><iframe width='560' height='315' src='https://www.youtube.com/embed/HG361wJyDY0?si=BiCikdgi-GNvgPew' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowfullscreen></iframe>'",
+        "2_direct_guide": "<p>The words for numbers 1 to 10 are:</p><p>One, Two, Three, Four, Five, Six, Seven, Eight, Nine, &nbsp;Ten</p>",
+        "3_solution_step": "<p>The left integer number <strong>9</strong> matches its word equivalent <strong>Nine</strong>.</p>",
+        "4_single_match": "1 matches to One"
+      },
+      "q_solution_steps": {
+        "step1": "<p>The left integer number <strong>9</strong> matches its word equivalent <strong>Nine</strong>.</p>",
+        "step2": "<p>The left integer number <strong>1</strong> matches its word equivalent <strong>One</strong>.</p>",
+        "step3": "<p>The left integer number <strong>5</strong> matches its word equivalent <strong>Five</strong>.</p>"
+      },
+      "step_learning_net_dependency": [
+        "1",
+        "2",
+        "3"
+      ]
+    }
+  ]

@@ -1,7 +1,7 @@
 import os
 import sys
 import yaml
-from models import user,qualification,subject,school,learning_network, question_type
+from models import user,qualification,subject,school,learning_network, question_type, admin, question_gen_manager
 
 configfile = {}
 scriptDir = os.path.dirname(os.path.abspath(__file__))
@@ -16,9 +16,10 @@ if os.path.exists(config_filepath):
 
 async def create_table():
     await user.create_table_user(configfile)
+    await admin.create_table_admin(configfile)
     await subject.create_table_subject(configfile)
     await qualification.create_table_qualification(configfile)
-
     await school.create_table_school(configfile)
     await learning_network.create_table_learning_network(configfile)
     await question_type.create_table_question_type(configfile)
+    await question_gen_manager.create_table_question_gen_manager(configfile)
